@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Estructura semàntica</title>
+
+	<style>
+		#general{
+			background-color: #CED0D6;
+			width: 440px;
+			height: 354px;
+			border-radius: 8px;
+			border: 2px solid #2B59C4;
+			margin: 5px auto 0;
+		}
+		#capcalera_IMG {
+			background-color: #9AA9CA;
+			width: 99%;
+			height: 50px;
+			border-radius: 6px;
+			position: relative;
+			margin: 0 auto;
+			top: 3px;
+		}
+		#capcalera_txt {
+			width: 230px;
+			float: left;
+			text-align: center;
+			line-height: 45px;
+		}
+		#enllacos {
+			position: absolute;
+			background-color: #728CC9;
+			width: 199px;
+			height: 38px;
+			border-radius: 6px;
+			top: 6px;
+			right: 5px;
+			line-height: 38px;
+			text-align: center;
+		}
+		#cos {
+			position: relative;
+			width: 99%;
+			height: 202px;
+			margin: 9px auto;
+				margin-bottom: 9px;
+			margin-bottom: 4px;
+			padding-top: 25px;
+			background-color: white;
+			border-radius: 6px;
+			display: flex;
+		}
+		#caixa_main {
+			position: absolute;
+			top: 2px;
+			left: 20px;
+		}
+		#esquerra {
+			background-color: #8499C7;
+			width: 70%;
+			height: 194px;
+			border-radius: 6px;
+			text-align: center;
+			line-height: 50px;
+			margin: 4px;
+		}
+		#dreta {
+			background: #768AB3;
+			width: 113px;
+			height: 194px;
+			border-radius: 6px;
+			text-align: center;
+			line-height: 160px;
+			margin: 4px 5px 4px 1px;
+		}
+		#final {
+			background-color: #9EAECD;
+			width: 418px;
+			height: 60px;
+			border-radius: 6px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		#section {
+			font-family: OpenSans;
+			font-size: 1rem;
+			text-align: left;
+			color: black;
+		}
+		#article1 {
+			margin: 0 5px 5px 5px;
+			background-color: #B8C2DA;
+			width: 287px;
+			height: 50px;
+			border-radius: 6px;
+			line-height: 46px;
+		}
+		#article2 {
+			margin: 0 5px;
+			background-color: #B8C2DA;
+			width: 287px;
+			height: 85px;
+			border-radius: 6px;
+			line-height: 68px;
+		}
+	</style>
+</head>
+<body>
+<h1>Estructura bàsica d'una pàgina HTML5</h1>
+
+<div>
+
+	<pre>
+		<fieldset>&lt;!doctype html&gt;<br>&lt;html&gt;<fieldset>
+				<legend>&lt;head&gt;</legend>
+				&lt;head&gt;
+				&lt;meta charset="utf-8"/&gt;
+				&lt;title&gt;Títol de la web&lt;/title&gt;    
+				&lt;/head&gt;
+			</fieldset><fieldset><legend>&lt;body&gt;</legend>
+				&lt;body&gt;
+				Contingut de la web
+				&lt;/body&gt;
+			</fieldset>&lt;/html&gt;
+		</fieldset>
+	</pre>
+</div>
+ 
+ <h1>Contingut del &lt;head&gt;</h1>
+	<p>Al <b>&lt;head&gt;</b> col·loquem les etiquetes que no es visualitzaran però que indicaran totes les característiques que el navegador necessita.<br>
+	Per exemple:<br>
+	<em>&lt;meta charset="utf-8"/&gt;</em><br>
+	Indica la codificació que tindrà la pàgina.<br><br>
+	<em>&lt;title&gt;Títol de la pàgina&lt;/title&gt;</em><br>
+	Mostrarà el títol a la pestanya del navegador.<br><br>
+	<em>&lt;meta name="description" content="Descripció de la pàgina"/&gt;</em><br>
+	L'atribut <b>content</b> hi haurà el que volem que es visualitzi com a descripció quan aquest aparegui en una cerca dels cercadors. No afecta els posicionadors. <br><br>
+	<em>
+		&lt;style type="text/css"&;gt; <br>
+			/* codi CSS */ <br>
+		&lt;/style&gt;
+	</em><br>
+	Ubicarem el codi CSS, que afectarà nomès als elements d'aquest arxiu HTML. <br><br>
+	<em>
+	&lt;link rel=stylesheet href="css/estilo.css" type="text/css"/&gt; <br>
+	Associarem l'arxiu d'estils CSS a l'arxiu html.
+	</em> <br><br>
+	<em>
+		&lt;script type="text/javascript"&gt;<br>
+			// codi de javaScript <br>
+		&lt;/script&gt;<br>
+	</em> <br>
+	inclourem el codi <b>javaScript</b>, el qual només afectarà a l'arxiu HTML declarat. <br> <br>
+	<em>
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	</em><br>
+	Això serà llegit per dispositius mòbils per a poder adaptar-se a la mida d'aquests.
+	</p>
+
+	<h1>Etiquetes semàntiques en HTML5</h1>
+		Al <b>&lt;body&gt;</b> és on es col·loquen tots els elements que es mostraran a la pàgina. Aquest contingut està dins de caixes. <br>
+
+		<div id="general">
+			<div id="capcalera_IMG" class="part1_bis">
+				<div id="capcalera_txt">
+					&lt;header&gt;
+				</div>
+				<div id="enllacos" class="part2_bis">
+					&lt;nav&gt;
+				</div>
+			</div>
+			<div id="cos">
+				<div id="caixa_main">&lt;main&gt;</div>
+				<div id="esquerra">
+					<div id="esquerra_bis">
+						&lt;section&gt;
+					</div>
+					<div id="article1">
+						&lt;article&gt;
+					</div>
+					<div id="article2">
+						&lt;article&gt;
+					</div>
+				</div>
+				<div id="dreta">
+					&lt;aside&gt;
+				</div>
+			</div>
+			<div id="final">
+				<div id="final_txt">
+					&lt;footer&gt;
+				</div>
+			</div>
+		</div>
+		<br>
+	
+		<h2>&lt;div&gt; caixa genèrica &lt;/div&gt;</h2>
+		<p>Tipus de caixa genèrica. És la més utilitzada. sol estar dins de caixes que tenen significat semàntic concret.</p>
+		<h2>&lt;main&gt; contingut principal de la pàgina &lt;/main&gt;</h2>
+		Caixa que conté tot el contingut principal de la pàgina. Té les següents característiques:
+		<ul>
+			<li>Només un <b>main</b> per pàgina</li>
+			<li>No pot estar inclòs en una altra caixa</li>
+			<li>Contindrà aquell contingut (div, section, article, aside) que no es repeteixi (header, nav, footer) a cada pàgina.</li>
+		</ul>
+		<h2>&lt;header&gt; capçalera &lt;/header&gt;</h2>
+		Ubiquem el contingut destinat a la capçalera de la pàgina. Normalment conté el logo i el nom de la pàgina.
+		<h2>&lt;footer&gt; peu de pàgina &lt;/footer&gt;</h2>
+		Ubiquem unformació del copyright, del mapa de la pàgina, autor, data, ...
+		<h2>&lt;nav&gt; enllaços &lt;/&gt;av></h2>
+		Conté tots els enllaços de la pàgina. En una pàgina pot haver més d'una etiqueta nav. Per exemple, dins el footer i/o a la capçalera.
+		<h2>&lt;section&gt; secció d'informació &lt;/section></h2>
+		Conté el contingut genèric de la pàgina:
+		<ul>
+			<li>Pot haver més d'una a la mateixa pàgina</li>
+			<li>Pot contenir múltiples <b>div</b> i d'altres con <b>article</b></li>
+			<li>S'utilitza per a grans quantitats o seccions d'informació de tipus similar</li>
+		</ul>
+		<h2>&lt;article&gt; article &lt;/article&gt;</h2>
+		Aquestes caixes també contenen informació, però normalment s'utilitza per mostrar informació més reduïda i concreta.
+		<h2>&lt;aside&gt; contingut &lt;/aside&gt;</h2>
+		ubiquem els continguts que no tenen relació directa amb la pàgina com, per exemple, publicitat. 
+		<h2>&lt;figure&gt; imatge &lt;/figure&gt;</h2>
+		Aquesta té l'objectiu de contenir imatges.
+ <h1>Exemple d'estructura</h1>
+		<pre>
+&lt;!doctype html&gt;
+&lt;html&gt;
+
+	&lt;head&gt;
+			&lt;meta charset="utf-8"/&gt;
+			&lt;meta name="descripcio" content="Resum del contingut de la pàgina"&gt;   
+			&lt;title&gt;Títol de la pàgina&lt;/title&gt;
+			&lt;link rel="stylesheet" href="css/estils.css" type="text/css"/&gt;
+			&lt;style type="text/css"&gt;
+					codi CSS 
+					codi CSS 
+			&lt;/style&gt;
+			&lt;script type="text/javascript"&gt;
+					codi javaScript 
+					codi javaScript 
+			&lt;/script&gt;
+			&lt;script type="text/javascript" src="js/codi.js"&gt;&lt;/script&gt;
+			&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		&lt;header&gt;cabecera&lt;/header&gt;
+		&lt;nav&gt;
+				enlaç1
+				enlaç2
+		&lt;/nav&gt;
+		&lt;main&gt;
+			&lt;section&gt;
+				&lt;article&gt; contingut &lt;/article&gt;
+				&lt;article&gt; contingut &lt;/article&gt;
+			&lt;/section&gt;
+		&lt;/main&gt;
+		&lt;footer&gt; © peu de la pàgina &lt;/footer&gt;
+	&lt;/body&gt;
+
+&lt;/html&gt;
+		</pre>
+</body>
+</html>
