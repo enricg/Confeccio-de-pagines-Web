@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Unitats</title>
+
+  <style>
+    html{
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Unitats relatives</h1>
+  <ul>
+    <li><a href="#idrem">REM:</a>Depén de l'element arrel (html)</li>
+    <li><a href="#idem">EM:</a>Igual que REM, però depén de l'element pare</li>
+    <li><a href="#idresp">Web Responsiva w/REM:</a></li>
+    <li><a href="#idvw">VW:</a>Acrònim de Viewport Width. Funciona com %. Especificar 10vw és equivalent a ocupar 10% de l'amplada visible de la pantalla.</li>
+    <li><a href="#idvh">VH:</a>Acrònim de viewport height. També funciona com percentatge. Especificar 10vh equival a ocupar el 10% de l'altura de la pantalla</li>
+    <li><a href="#idpercent">%</a></li>
+  </ul>
+  <hr>
+  <h2 id="#idrem">REM</h2>
+  La mida per defecte en HTML són 16px <br>
+  1 REM equival a 16px <br>
+
+  3 REM = 3 * 16 px = <span style="font-size: 3rem;">48px</span>
+
+  Si canviem la mida a l'element arrel (html) a 50px, el tamany de 3 REM creixerà a 150px. <br>
+  1 REM = 50px <br>
+  3 REM = 3 * 50px = <span style="font-size: 3rem;">150px</span>
+  <hr>
+  <h2 id="#idem">EM</h2>
+  La mida per defecte en HTML són 16px <br>
+  1 EM equival a 16px <br>
+
+  3em = 3 * 16 px = <span style="font-size: 3em;">48px</span>
+
+  Si canviem la mida a l'element pare (div) a 50px, el tamany de 3EM creixerà a 150px. <br>
+  1EM = 50px <br>
+  <div style="font-size: 50px;">
+    3em = 3 * 50px = <span style="font-size: 3em;">150px</span>
+  </div>
+  <hr>
+  <h2 id="#idvw">VW</h2>
+  Aquest és un text amb una mida de 16px.
+  <div style="height: 300px; font-size: 50vw;">Aquest és un text amb una mida de 50vw</div>
+  <h2 id="#idvh">VH</h2>
+  Aquest és un text amb una mida de 16px.
+  <div style="width: 300px; font-size: 50vh;">Aquest és un text amb una mida de 50vh</div>
+</body>
+</html>
