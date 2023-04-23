@@ -5,18 +5,18 @@
   <title>Flex</title>
   <style>
     #container{
-      width: 50%;
+      width: 70%;
+      height: 200px;
+      border: 1px solid black;
+      margin: 0 auto;
+      padding: 2px;
       text-align: center;
       display: flex;
-      flex-direction: row; /* row-reverse column  column-reverse */
-      justify-content: flex-start; /* flex-end  center  space-between space-around */
-      align-items: flex-start; /* flex-end  center  baseline  stretch */
       flex-wrap: nowrap; /* wrap */
-      align-content: flex-start; /* flex-end  center  space-between space-around */ 
     }
     .caixa{
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 100px;
     }
     .rosa{
       background-color: pink;
@@ -30,14 +30,145 @@
     .taronja{
       background-color: orange;
     }
-  </style>
+    </style>
 </head>
 <body>
-  <section id="container">
+  <h2>flex-direction</h2>
+  <h3>row</h3>
+  <div id="container" style="flex-direction: row;">  
     <div class="caixa rosa">1</div>
     <div class="caixa blau">2</div>
     <div class="caixa verd">3</div>
     <div class="caixa taronja">4</div>
-  </section>
+  </div>
+  <h3>row-reverse</h3>
+  <div id="container"  style="flex-direction:row-reverse">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>column</h3>
+  <div id="container"  style="flex-direction:column">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>column-reverse</h3>
+  <div id="container"  style="flex-direction:column-reverse">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h2>justify-content</h2>
+  <h3>flex-start</h3>
+  <div id="container" style="justify-content: flex-start;">  
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>flex-end</h3>
+  <div id="container"  style="justify-content:flex-end">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>center</h3>
+  <div id="container"  style="justify-content:center">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>space-between</h3>
+  <div id="container"  style="justify-content:space-between">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>space-around</h3>
+  <div id="container"  style="justify-content:space-around">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h2>align-items</h2>
+  <h3>flex-start</h3>
+  <div id="container" style="align-items: flex-start;">  
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>flex-end</h3>
+  <div id="container"  style="align-items:flex-end">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>center</h3>
+  <div id="container"  style="align-items:center">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>baseline</h3>
+  <div id="container"  style="align-items:baseline">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>stretch</h3>
+  <div id="container"  style="align-items:stretch">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h2>align-content</h2>
+  <h3>flex-start</h3>
+  <div id="container" style="flex-wrap: wrap; align-content: flex-start;">  
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>flex-end</h3>
+  <div id="container"  style="flex-wrap: wrap;align-content:flex-end;">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>center</h3>
+  <div id="container" style="flex-wrap: wrap;align-content:center;">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>space-between</h3>
+  <div id="container" style="flex-wrap: wrap;align-content:space-between;">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
+  <h3>space-around</h3>
+  <div id="container" style="flex-wrap: wrap;align-content:space-around">
+    <div class="caixa rosa">1</div>
+    <div class="caixa blau">2</div>
+    <div class="caixa verd">3</div>
+    <div class="caixa taronja">4</div>
+  </div>
 </body>
 </html>
