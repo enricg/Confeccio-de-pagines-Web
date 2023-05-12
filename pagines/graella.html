@@ -4,12 +4,29 @@
 	<title>Graelles: display: grid</title>
 	<meta charset="utf-8">
 	<style>
+		h1, h2{
+			text-align: center;
+		}
+		.exemple{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.tarjeta{
+			width: 250px;
+			height: 250px;
+			margin: 50px 5px 5px 5px;
+		}
 		.contenidor{
 			display:grid;
 			grid-template-columns:auto auto auto auto auto;
-			grid-template-rows: 100px 100px 100px 100px 100px;
+			grid-template-rows: 50px 50px 50px 50px 50px;
 			background-color:yellow;
 			padding:5px;
+		}
+		.titol{
+			text-align: center;
+			font-size: .8rem;
 		}
 		.item{
 			border: 3px solid black;
@@ -79,13 +96,14 @@
 		.ga-contenidor{
 			display:grid;			
 			background-color:yellow;
+			padding:5px;
 			grid-template-areas:
 			'capcalera capcalera capcalera capcalera'
 			'menu main main aside'
 			'menu main main aside'
 			'menu main main aside'
 			'footer footer footer footer';
-			height:500px;
+			height:250px;
 		
 		}
 		.item2{
@@ -116,41 +134,53 @@
 	</style>
 </head>
 <body>
-	<h1>Exercici de distribució de contingut amb grid utilitzant div</h1>
+	<h1>Exercici de distribució de contingut amb grid</h1>
 	<hr>
-	<div class="contenidor">
-		<header class="item capcalera">Capçalera</header>
-		<nav class="item menu">Menú</nav>
-		<main class="item principal">Principal</main>
-		<aside class="item aside">Aside</aside>
-		<footer class="item peu">Peu</footer>
-	</div>
-	<h1>Distribució utilitzant caixes semàntiques</h1>
-	<hr>
-	<div class="contenidor">
-		<div class="item capcalera">Capçalera</div>
-		<div class="item menu">Menú</div>
-		<div class="item principal">Principal</div>
-		<div class="item aside">Aside</div>
-		<div class="item peu">Peu</div>
-	</div>
-	<h1>Distribució de grid amb atributs resumits</h1>
-	<hr>
-	<div class="contenidor">
-		<header class="item sh-capcalera">Capçalera</header>
-		<nav class="item sh-menu">Menú</nav>
-		<main class="item sh-principal">Principal</main>
-		<aside class="item sh-aside">Aside</aside>
-		<footer class="item sh-peu">Peu</footer>
-	</div>
-	<h1>Distribució de grid assignant noms a àrees</h1>
-	<hr>
-	<div class="ga-contenidor">
-		<div class="item2 ga-capcalera">Capçalera</div>
-		<div class="item2 ga-menu">Menú</div>
-		<div class="item2 ga-main">Principal</div>
-		<div class="item2 ga-aside">Aside</div>
-		<div class="item2 ga-footer">Peu</div>
+	<div class="exemple">
+		<div class="tarjeta">
+			<h2 class="titol">Utilitzant div</h2>
+			<hr>
+			<div class="contenidor">
+				<header class="item capcalera">Capçalera</header>
+				<nav class="item menu">Menú</nav>
+				<main class="item principal">Principal</main>
+				<aside class="item aside">Aside</aside>
+				<footer class="item peu">Peu</footer>
+			</div>
+		</div>
+		<div class="tarjeta">
+			<h2 class="titol">Utilitzant caixes semàntiques</h2>
+			<hr>
+			<div class="contenidor">
+				<div class="item capcalera">Capçalera</div>
+				<div class="item menu">Menú</div>
+				<div class="item principal">Principal</div>
+				<div class="item aside">Aside</div>
+				<div class="item peu">Peu</div>
+			</div>
+		</div>
+		<div class="tarjeta">
+			<h2 class="titol">Distribució de grid amb atributs resumits</h2>
+			<hr>
+			<div class="contenidor">
+				<header class="item sh-capcalera">Capçalera</header>
+				<nav class="item sh-menu">Menú</nav>
+				<main class="item sh-principal">Principal</main>
+				<aside class="item sh-aside">Aside</aside>
+				<footer class="item sh-peu">Peu</footer>
+			</div>
+		</div>
+		<div class="tarjeta">
+			<h2 class="titol">Distribució de grid assignant noms a àrees</h2>
+			<hr>
+			<div class="ga-contenidor">
+				<div class="item2 ga-capcalera">Capçalera</div>
+				<div class="item2 ga-menu">Menú</div>
+				<div class="item2 ga-main">Principal</div>
+				<div class="item2 ga-aside">Aside</div>
+				<div class="item2 ga-footer">Peu</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
