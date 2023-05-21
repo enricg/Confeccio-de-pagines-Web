@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="ca">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Estructura semàntica</title>
+	<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/menu.css" />
+		<link rel="stylesheet" href="../css/capcaleraipeu.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+		<link rel="stylesheet" href="../css/principal.css" />
+    <link
+      rel="stylesheet"
+      href="../tercers/font-awesome/css/fontawesome.min.css"
+    />
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon" />
+		<title>Estructura semàntica</title>
 
 	<style>
 		#general{
@@ -111,18 +120,115 @@
 	</style>
 </head>
 <body>
-<h2>Estructura bàsica d'una pàgina HTML5</h2>
-
+	<!-- Capçalera -->
+	<header class="capcalera">MF0950_2. Maquetació de pàgines Web</header>
+	<!-- Menú -->
+	<nav>
+		<ul class="menu">
+			<li class="item">
+				<a href="../index.html"><i class="fa fa-home"></i>Inici</a>
+			</li>
+			<li class="item itemsub">
+				<a href="#"
+					><i class="fa fa-gear"></i>Apunts
+					<i class="fa fa-chevron-right" aria-hidden="true"></i
+				></a>
+				<ul class="menu submenu">
+					<li class="item">
+						<a href="../pagines/estructura_basica.html" target="_blank"
+							>Estructura bàsica HTML5</a
+						>
+					</li>
+					<li class="item">
+						<a href="../pagines/etiquetes_basiques.html" target="_blank"
+							>Etiquetes bàsiques</a
+						>
+					</li>
+					<li class="item">
+						<a href="../pagines/teoria-selectors.html" target="_blank"
+							>Teoria selectors</a
+						>
+					</li>
+				</ul>
+			</li>
+			<li class="item itemsub">
+				<a href="#"
+					><i class="fa fa-gear"></i>Exercicis<i
+						class="fa fa-chevron-right"
+						aria-hidden="true"
+					></i
+				></a>
+				<ul class="menu submenu">
+					<li class="item">
+						<a href="../pagines/hola_mon.html" target="_blank">Hola món</a>
+					</li>
+					<li class="item">
+						<a href="../pagines/imatges.html" target="_blank">Imatges</a>
+					</li>
+					<li class="item">
+						<a href="../pagines/semantica.html" target="_blank">Semàntica</a>
+					</li>
+					<li class="item">
+						<a href="../pagines/positionPosicionament.html" target="_blank"
+							>Position: Posicionament de les caixes</a
+						>
+					</li>
+					<li class="item">
+						<a href="../pagines/comportament_float.html" target="_blank"
+							>Posicionament amb float</a
+						>
+					</li>
+					<li class="item">
+						<a href="../pagines/flex.html" target="_blank"
+							>Posicionament amb flex</a
+						>
+					</li>
+					<li class="item">
+						<a href="../pagines/fmarcs.html" target="_blank">Marcs (frames)</a>
+					</li>
+					<li class="item">
+						<a href="../pagines/marcs.html" target="_blank">Marcs (iframes)</a>
+					</li>
+					<li class="item">
+						<a href="../pagines/animacions.html" target="_blank">Animacions</a>
+					</li>
+				</ul>
+			</li>
+			<li class="item itemsub">
+				<a href="#"
+					><i class="fa fa-user"></i> Altres<i
+						class="fa fa-chevron-right"
+						aria-hidden="true"
+					></i
+				></a>
+				<ul class="menu submenu">
+					<li class="item">
+						<a href="../pagines/enllacos_interes.html" target="_blank"
+							>Enllaços d'interés</a
+						>
+					</li>
+					<li class="item">
+						<a href="../pagines/correccions.html" target="_blank"
+							>Correccions d'exercicis d'alumnes</a
+						>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<main>
+	<h2>Estructura bàsica d'una pàgina HTML5</h2>
 <div>
-
 	<pre>
-		<fieldset>&lt;!doctype html&gt;<br>&lt;html&gt;<fieldset>
+		<fieldset>&lt;!doctype html&gt;<br>&lt;html&gt;
+			<fieldset>
 				<legend>&lt;head&gt;</legend>
 				&lt;head&gt;
 				&lt;meta charset="utf-8"/&gt;
 				&lt;title&gt;Títol de la web&lt;/title&gt;    
 				&lt;/head&gt;
-			</fieldset><fieldset><legend>&lt;body&gt;</legend>
+			</fieldset>
+			<fieldset><legend>&lt;body&gt;</legend>
 				&lt;body&gt;
 				Contingut de la web
 				&lt;/body&gt;
@@ -130,10 +236,10 @@
 		</fieldset>
 	</pre>
 </div>
- 
+ <!--create a card?-->
  <h2>Contingut del &lt;head&gt;</h2>
 	<p>Al <b>&lt;head&gt;</b> col·loquem les etiquetes que no es visualitzaran però que indicaran totes les característiques que el navegador necessita.<br>
-	Per exemple:<br>
+		Per exemple:<br>
 	<em>&lt;meta charset="utf-8"/&gt;</em><br>
 	Indica la codificació que tindrà la pàgina.<br><br>
 	<em>&lt;title&gt;Títol de la pàgina&lt;/title&gt;</em><br>
@@ -142,7 +248,7 @@
 	L'atribut <b>content</b> hi haurà el que volem que es visualitzi com a descripció quan aquest aparegui en una cerca dels cercadors. No afecta els posicionadors. <br><br>
 	<em>
 		&lt;style type="text/css"&;gt; <br>
-			/* codi CSS */ <br>
+		/* codi CSS */ <br>
 		&lt;/style&gt;
 	</em><br>
 	Ubicarem el codi CSS, que afectarà nomès als elements d'aquest arxiu HTML. <br><br>
@@ -160,10 +266,10 @@
 		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 	</em><br>
 	Això serà llegit per dispositius mòbils per a poder adaptar-se a la mida d'aquests.
-	</p>
+</p>
 
 	<h2>Etiquetes semàntiques en HTML5</h2>
-		Al <b>&lt;body&gt;</b> és on es col·loquen tots els elements que es mostraran a la pàgina. Aquest contingut està dins de caixes. <br>
+	Al <b>&lt;body&gt;</b> és on es col·loquen tots els elements que es mostraran a la pàgina. Aquest contingut està dins de caixes. <br>
 
 		<div id="general">
 			<div id="capcalera_IMG" class="part1_bis">
@@ -229,19 +335,19 @@
 		Aquesta té l'objectiu de contenir imatges.
  <h2>Exemple d'estructura</h2>
 		<pre>
-&lt;!doctype html&gt;
+			&lt;!doctype html&gt;
 &lt;html&gt;
 
 	&lt;head&gt;
-			&lt;meta charset="utf-8"/&gt;
-			&lt;meta name="descripcio" content="Resum del contingut de la pàgina"&gt;   
+	&lt;meta charset="utf-8"/&gt;
+	&lt;meta name="descripcio" content="Resum del contingut de la pàgina"&gt;   
 			&lt;title&gt;Títol de la pàgina&lt;/title&gt;
 			&lt;link rel="stylesheet" href="css/estils.css" type="text/css"/&gt;
 			&lt;style type="text/css"&gt;
 					codi CSS 
 					codi CSS 
-			&lt;/style&gt;
-			&lt;script type="text/javascript"&gt;
+					&lt;/style&gt;
+					&lt;script type="text/javascript"&gt;
 					codi javaScript 
 					codi javaScript 
 			&lt;/script&gt;
@@ -250,11 +356,11 @@
 	&lt;/head&gt;
 
 	&lt;body&gt;
-		&lt;header&gt;cabecera&lt;/header&gt;
+	&lt;header&gt;cabecera&lt;/header&gt;
 		&lt;nav&gt;
 				enlaç1
 				enlaç2
-		&lt;/nav&gt;
+				&lt;/nav&gt;
 		&lt;main&gt;
 			&lt;section&gt;
 				&lt;article&gt; contingut &lt;/article&gt;
@@ -265,6 +371,11 @@
 	&lt;/body&gt;
 
 &lt;/html&gt;
-		</pre>
+</pre>
+</main>
+   <!-- Peu de pàgina -->
+<footer class="peu">
+	&copy; Desenvolupat pels alumnes de CP Maquetació de Pàgines Web.<br />2023
+</footer>
 </body>
 </html>

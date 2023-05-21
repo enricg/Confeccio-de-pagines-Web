@@ -1,0 +1,8 @@
+main {
+  position: relative;
+  float: right;
+  width: 82%;
+  top: 60px;
+  border: 2px solid burlywood;
+  padding: 5px;
+}

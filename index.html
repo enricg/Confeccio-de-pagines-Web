@@ -1,56 +1,123 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>MF0950_2. Maquetació de pàgines Web</title>
-		
-		<style>
-			ul{
-				list-style-type:none;
-			}
-			
-		</style>
-		
-	</head>
-	<body>
-	<header>
-		MF0950_2. Maquetació de pàgines Web
-	</header>
-	<main>
-		<nav>
-			<ul>
-				<li>UF1302 Iniciació a la programació HTML
-				<ul>
-					<li>Apunts</li>
-					<ol>
-						<li><a href="./pagines/estructura_basica.html" target="_blank">Estructura bàsica HTML5</a></li>
-						<li><a href="./pagines/etiquetes_basiques.html" target="_blank">Etiquetes bàsiques</a></li>
-						<li><a href="./pagines/teoria-selectors.html" target="_blank">Teoria selectors</a></li>
-					</ol>
-					<li>Exercicis</li>
-					<ol>
-						<li><a href="./pagines/hola_mon.html" target="_blank">Hola món</a></li>
-						<li><a href="./pagines/imatges.html" target="_blank">Imatges</a></li>
-						<li><a href="./pagines/semantica.html" target="_blank">Semàntica</a></li>
-						<li><a href="./pagines/positionPosicionament.html" target="_blank">Position: Posicionament de les caixes</a></li>
-						<li><a href="./pagines/comportament_float.html" target="_blank">Posicionament amb float</a></li>
-						<li><a href="./pagines/flex.html" target="_blank">Posicionament amb flex</a></li>
-						<li><a href="./pagines/fmarcs.html" target="_blank">Marcs (frames)</a></li>
-						<li><a href="./pagines/marcs.html" target="_blank">Marcs (iframes)</a></li>
-						<li><a href="./pagines/animacions.html" target="_blank">Animacions</a></li>
-					</ol>
-				</ul>
-				<ul>Altres
-					<ol>
-						<li><a href="./pagines/enllacos_interes.html" target="_blank">Enllaços d'interés</a></li>
-						<li><a href="./pagines/correccions.html" target="_blank">Correccions d'exercicis d'alumnes</a></li>
-					</ol>
-				</ul>
-				</li>
-				<li>UF1303 Iniciació als fulls d'estil CSS3</li>
-				<li>UF1304 Creació de formularis i plantilles</li>
-			</ul>
-		</nav>
-	</main>
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link
+      rel="stylesheet"
+      href="./tercers/font-awesome/css/fontawesome.min.css"
+    />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <title>Pàgina inicial curs HTML i CSS</title>
+  </head>
+
+  <body>
+    <!-- Capçalera -->
+    <header class="capcalera">MF0950_2. Maquetació de pàgines Web</header>
+    <!-- Menú -->
+    <nav>
+      <ul class="menu">
+        <li class="item">
+          <a href="./index.html"
+            ><i class="fa fa-home tooltip"
+              ><span class="tooltiptext">Menú disenyat per Ihor Prolov</span></i
+            >Inici</a
+          >
+        </li>
+        <li class="item itemsub">
+          <a href="#"
+            ><i class="fa fa-gear"></i>Apunts
+            <i class="fa fa-chevron-right" aria-hidden="true"></i
+          ></a>
+          <ul class="menu submenu">
+            <li class="item">
+              <a href="./pagines/estructura_basica.html"
+                >Estructura bàsica HTML5</a
+              >
+            </li>
+            <li class="item">
+              <a href="./pagines/etiquetes_basiques.html">Etiquetes bàsiques</a>
+            </li>
+            <li class="item">
+              <a href="./pagines/teoria-selectors.html" target="_blank"
+                >Teoria selectors</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="item itemsub">
+          <a href="#"
+            ><i class="fa fa-gear"></i>Exercicis<i
+              class="fa fa-chevron-right"
+              aria-hidden="true"
+            ></i
+          ></a>
+          <ul class="menu submenu">
+            <li class="item">
+              <a href="./pagines/hola_mon.html" target="_blank">Hola món</a>
+            </li>
+            <li class="item">
+              <a href="./pagines/imatges.html" target="_blank">Imatges</a>
+            </li>
+            <li class="item">
+              <a href="./pagines/semantica.html" target="_blank">Semàntica</a>
+            </li>
+            <li class="item">
+              <a href="./pagines/positionPosicionament.html" target="_blank"
+                >Position: Posicionament de les caixes</a
+              >
+            </li>
+            <li class="item">
+              <a href="./pagines/comportament_float.html" target="_blank"
+                >Posicionament amb float</a
+              >
+            </li>
+            <li class="item">
+              <a href="./pagines/flex.html" target="_blank"
+                >Posicionament amb flex</a
+              >
+            </li>
+            <li class="item">
+              <a href="./pagines/fmarcs.html" target="_blank">Marcs (frames)</a>
+            </li>
+            <li class="item">
+              <a href="./pagines/marcs.html" target="_blank">Marcs (iframes)</a>
+            </li>
+            <li class="item">
+              <a href="./pagines/animacions.html" target="_blank">Animacions</a>
+            </li>
+          </ul>
+        </li>
+        <li class="item itemsub">
+          <a href="#"
+            ><i class="fa fa-user"></i> Altres<i
+              class="fa fa-chevron-right"
+              aria-hidden="true"
+            ></i
+          ></a>
+          <ul class="menu submenu">
+            <li class="item">
+              <a href="./pagines/enllacos_interes.html" target="_blank"
+                >Enllaços d'interés</a
+              >
+            </li>
+            <li class="item">
+              <a href="./pagines/correccions.html" target="_blank"
+                >Correccions d'exercicis d'alumnes</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main></main>
+    <!-- Peu de pàgina -->
+    <footer class="peu">
+      &copy; Desenvolupat pels alumnes de CP Maquetació de Pàgines Web.<br />2023
+    </footer>
+  </body>
 </html>

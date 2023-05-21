@@ -1,0 +1,82 @@
+/*
+ fet per: Ihor Frolov
+*/
+
+/* * {
+    border: 1px solid red;
+} */
+
+nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    display: block;
+    width: 250px;
+    position: fixed;
+    top: 50px;
+}
+
+.menu {
+    display: inline;
+    position: relative;
+    top: 0px;
+    left:0px;
+}
+
+.item {
+    display: block;
+    position: relative;
+    background-color: cadetblue;
+    border-bottom: 2px solid burlywood;
+    border-left: 6px solid burlywood;
+}
+.item a {
+    display: inline-block;
+    text-decoration: none;
+    color: beige;
+    padding: 16px;
+    width: calc(100% - 32px);
+}
+
+.fa-chevron-right {
+    transform: rotate(0);
+    float: right;
+        /* Transition properties */
+        transition-property: all;
+        transition-duration: 1.2s;
+        transition-timing-function: linear;
+        transition-delay: .2s;
+}
+
+.item:hover {
+    background-color: burlywood;
+}
+
+.submenu {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -46px;
+    /* left: 184px; */
+    opacity: 0;
+    /* Transition properties */
+    transition-property: all;
+    transition-duration: 1.2s;
+    transition-timing-function: linear;
+    transition-delay: .2s;
+}
+
+.item /*> .menu*/ .item {
+    width: 250px;
+    border-left: 6px solid burlywood;
+
+}
+
+.itemsub:hover .fa-chevron-right {
+    transform: rotate(180deg);
+}
+
+.itemsub:hover > .submenu {
+    display: block;
+    opacity: 1;
+    left:204px;
+}item

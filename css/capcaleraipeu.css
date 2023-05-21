@@ -1,0 +1,27 @@
+.capcalera {
+  display: grid;
+  position: fixed;
+  top: 0;
+  z-index: 90;
+  height: 50px;
+  width: 100%;
+  background-color: cadetblue;
+  place-content: center;
+  color: #ffffff;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+}
+
+.peu {
+  display: grid;
+  position: fixed;
+  bottom: 0;
+  z-index: 90;
+  height: 50px;
+  width: 100%;
+  background-color: cadetblue;
+  place-content: center;
+  color: #ffffff;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+}
