@@ -4,120 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/menu.css" />
-    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
-    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="./tercers/font-awesome/css/fontawesome.min.css"
     />
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="stylesheet" href="./css/style-menu-vertical.css">
     <title>Pàgina inicial curs HTML i CSS</title>
   </head>
-
+  <!-- funció per reutilitzar el codi-->
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain attribute:*/
+        file = elmnt.getAttribute("variablemenu");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("variablemenu");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    }
+  </script>
   <body>
     <!-- Capçalera -->
-    <header class="capcalera">MF0950_2. Maquetació de pàgines Web</header>
+    <div variablemenu="./snippets/capcalera.html"></div>
+
     <!-- Menú -->
-    <nav>
-      <ul class="menu">
-        <li class="item">
-          <a href="./index.html"
-            ><i class="fa fa-home tooltip"
-              ><span class="tooltiptext">Menú disenyat per Ihor Prolov</span></i
-            >Inici</a
-          >
-        </li>
-        <li class="item itemsub">
-          <a href="#"
-            ><i class="fa fa-gear"></i>Apunts
-            <i class="fa fa-chevron-right" aria-hidden="true"></i
-          ></a>
-          <ul class="menu submenu">
-            <li class="item">
-              <a href="./pagines/estructura_basica.html"
-                >Estructura bàsica HTML5</a
-              >
-            </li>
-            <li class="item">
-              <a href="./pagines/etiquetes_basiques.html">Etiquetes bàsiques</a>
-            </li>
-            <li class="item">
-              <a href="./pagines/teoria-selectors.html" target="_blank"
-                >Teoria selectors</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="item itemsub">
-          <a href="#"
-            ><i class="fa fa-gear"></i>Exercicis<i
-              class="fa fa-chevron-right"
-              aria-hidden="true"
-            ></i
-          ></a>
-          <ul class="menu submenu">
-            <li class="item">
-              <a href="./pagines/hola_mon.html" target="_blank">Hola món</a>
-            </li>
-            <li class="item">
-              <a href="./pagines/imatges.html" target="_blank">Imatges</a>
-            </li>
-            <li class="item">
-              <a href="./pagines/semantica.html" target="_blank">Semàntica</a>
-            </li>
-            <li class="item">
-              <a href="./pagines/positionPosicionament.html" target="_blank"
-                >Position: Posicionament de les caixes</a
-              >
-            </li>
-            <li class="item">
-              <a href="./pagines/comportament_float.html" target="_blank"
-                >Posicionament amb float</a
-              >
-            </li>
-            <li class="item">
-              <a href="./pagines/flex.html" target="_blank"
-                >Posicionament amb flex</a
-              >
-            </li>
-            <li class="item">
-              <a href="./pagines/fmarcs.html" target="_blank">Marcs (frames)</a>
-            </li>
-            <li class="item">
-              <a href="./pagines/marcs.html" target="_blank">Marcs (iframes)</a>
-            </li>
-            <li class="item">
-              <a href="./pagines/animacions.html" target="_blank">Animacions</a>
-            </li>
-          </ul>
-        </li>
-        <li class="item itemsub">
-          <a href="#"
-            ><i class="fa fa-user"></i> Altres<i
-              class="fa fa-chevron-right"
-              aria-hidden="true"
-            ></i
-          ></a>
-          <ul class="menu submenu">
-            <li class="item">
-              <a href="./pagines/enllacos_interes.html" target="_blank"
-                >Enllaços d'interés</a
-              >
-            </li>
-            <li class="item">
-              <a href="./pagines/correccions.html" target="_blank"
-                >Correccions d'exercicis d'alumnes</a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <div variablemenu="./snippets/menu.html"></div>
+
+    <!-- COntingut principal -->
     <main></main>
+   
     <!-- Peu de pàgina -->
-    <footer class="peu">
-      &copy; Desenvolupat pels alumnes de CP Maquetació de Pàgines Web.<br />2023
     </footer>
+    <div variablemenu="./snippets/peu.html"></div>
+
+    <script>
+      includeHTML();
+    </script>
   </body>
 </html>
