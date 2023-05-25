@@ -1,26 +1,27 @@
-/* Tooltip container */
+/* Tooltip contenidor */
 .tooltip {
   position: relative;
   display: inline-block;
-  border-top: 1px dotted rgb(0, 0, 0); /* If you want dots under the hoverable text */
+  border-top: 2px dotted rgb(255, 0, 0);
 }
 
 /* Tooltip text */
 .tooltip .tooltiptext {
+  font-size: 0.8rem;
   visibility: hidden;
   width: 300px;
   background-color: black;
   color: #fff;
-  text-align: center;
+  text-align: left;
   padding: 5px 0;
   border-radius: 6px;
 
-  /* Position the tooltip text - see examples below! */
+  /* Posició els text del tooltip */
   position: absolute;
   z-index: 1;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
+/* Mostra el text del tooltip quan el cursor passa per sobre del contenidor */
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }

@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "Game Of Squids";
+  src: url(../fonts/game_of_squids.otf);
+}
+
+@keyframes desplacamentirotacion {
+  0% {
+    top: 0px;
+  }
+  30% {
+    top: 150px;
+    border-radius: 50%;
+  }
+  50% {
+    transform: rotate(35deg);
+  }
+  70% {
+    top: 250px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.container {
+  width: 80%;
+  height: 300px;
+  border: 1px dotted black;
+  position: relative;
+}
+
+.caixa {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+  position: absolute;
+}
+
+.vermell {
+  background-color: #ff0000;
+  left: 10px;
+  /* associaciom de animacion con element */
+  animation-name: desplacamentirotacion;
+  animation-duration: 6s;
+}
+
+.blau {
+  background-color: #0000ff;
+  left: 70px;
+  animation-name: desplacamentirotacion;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.groc {
+  background-color: #ffff00;
+  left: 130px;
+  animation-name: desplacamentirotacion;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+/* Titol animado */
+
+@keyframes titol {
+  0% {
+    opacity: 0;
+    color: #ffff00;
+  }
+  40% {
+    opacity: 1;
+    font-size: 5em;
+    color: #ff0000;
+  }
+
+  100% {
+    color: black;
+    font-size: 3em;
+    opacity: 1;
+  }
+}
+
+@keyframes images {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 900px;
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 960px;
+  height: 100px;
+  margin: auto;
+  text-align: center;
+}
+
+.letter {
+  font-family: "Game Of Squids", Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0;
+  animation-name: titol;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.sp01 {
+  animation-delay: 0s;
+}
+
+.sp02 {
+  animation-delay: 0.5s;
+}
+.sp03 {
+  animation-delay: 1s;
+}
+.sp04 {
+  animation-delay: 1.5s;
+}
+.sp05 {
+  animation-delay: 2s;
+}
+.sp06 {
+  animation-delay: 2.5s;
+}
+.sp07 {
+  animation-delay: 3s;
+}
+.sp08 {
+  animation-delay: 3.5s;
+}
+.sp09 {
+  animation-delay: 4s;
+}
+.sp10 {
+  animation-delay: 4.5s;
+}
+.sp11 {
+  animation-delay: 5s;
+}
+.sp12 {
+  animation-delay: 5.5s;
+}
+.sp13 {
+  animation-delay: 6s;
+}
+.sp14 {
+  animation-delay: 6.5s;
+}
+.sp15 {
+  animation-delay: 7s;
+}
+
+.images {
+  width: 900px;
+  height: 300px;
+  margin: auto;
+  opacity: 0;
+  background-image: url(../images/303-3030448_coding-html-css.jpg);
+  background-size: cover;
+  animation-name: images;
+  animation-duration: 1s;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+}
+/* footer */
+
+footer {
+  display: block;
+  height: 40px;
+  background-color: bisque;
+  padding: 10px 30px 10px 30px;
+  border-top: 2px solid goldenrod;
+  margin-top: 60px;
+}
