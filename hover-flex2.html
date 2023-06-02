@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
+		<link rel="stylesheet" href="./css/principal.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="stylesheet" href="./css/style-menu-vertical.css">
+		<link rel="stylesheet" href="./css/hover-flex2.css">
+    <title>Pàgina inicial curs HTML i CSS</title>
+  </head>
+  <!-- funció per reutilitzar el codi-->
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain attribute:*/
+        file = elmnt.getAttribute("variablemenu");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("variablemenu");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    }
+  </script>
+  <body>
+    <!-- Capçalera -->
+    <div variablemenu="./snippets/capcalera.html"></div>
+
+    <!-- Menú -->
+    <div variablemenu="./snippets/menu.html"></div>
+
+    <!-- COntingut principal -->
+    <main>
+			<h1>Prova per veure lo de les classes</h1>
+    <hr>
+	<div class="principal">
+		<div>
+				<h2>Flex-direction</h2>
+				<div class="opcio frow">Row</div>
+				<div class="opcio frow-reverse">Row reverse</div>
+				<div class="opcio fcolumn">Column</div>
+				<div class="opcio fcolumn-reverse">Column-reverse</div>
+			<h2>Justify-content</h2>
+			<div class="opcio jflex-start">flex-start</div>
+			<div class="opcio jflex-end">flex-end</div>
+			<div class="opcio jcenter">center</div>
+			<div class="opcio jspace-between">space-between</div>
+			<div class="opcio jspace-around">space-around</div>
+			<div class="opcio jspace-between">space-evenly</div>
+			<h2>Align-items</h2>
+			<div class="opcio aiflex-start">flex-start</div>
+			<div class="opcio aiflex-end">flex-end</div>
+			<div class="opcio aicenter">center</div>
+			<div class="opcio aistretch">stretch</div>
+			<div class="opcio aibaseline">baseline</div>
+			<h2>Align-content</h2>
+			<div class="opcio acflex-start">flex-start</div>
+			<div class="opcio acflex-end">flex-end</div>
+			<div class="opcio accenter">center</div>
+			<div class="opcio acstretch">stretch</div>
+			<div class="opcio acspace-around">space-around</div>
+			<div class="opcio acspace-between">space-between</div>
+			<div class="grupcaixetes">
+				<div class="caixa blau">1</div>
+				<div class="caixa vermell">2</div>
+				<div class="caixa rosa">3</div>
+				<div class="caixa taronja">4</div>
+				<div class="caixa groc">5</div>
+				<div class="caixa marro">6</div>
+			</div>
+		</div>
+	</div>
+</body>
+</main>
+   
+<!-- Peu de pàgina -->
+</footer>
+<div variablemenu="./snippets/peu.html"></div>
+
+<script>
+	includeHTML();
+</script>
+</body>
+</html>

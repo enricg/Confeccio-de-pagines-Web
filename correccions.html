@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+
+    <link rel="stylesheet" href="./css/animaciones.css">
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
+		<link rel="stylesheet" href="./css/principal.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="stylesheet" href="./css/style-menu-vertical.css">
+    <title>Pàgina inicial curs HTML i CSS</title>
+    <style>
+      /* * {
+  box-sizing: border-box;
+} */
+
+/* body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+} */
+
+/* Header/Blog Title */
+/* .header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+} */
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+/* .leftcolumn {
+  float: left;
+  width: 75%;
+} */
+
+/* Right column */
+/* .rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+} */
+
+/* Fake image */
+/* .fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+} */
+
+/* Add a card effect for articles */
+/* .card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+} */
+
+/* Clear floats after the columns */
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+} */
+    </style>
+  </head>
+  <!-- funció per reutilitzar el codi-->
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain attribute:*/
+        file = elmnt.getAttribute("variablemenu");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("variablemenu");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    }
+  </script>
+  <body>
+    <!-- Capçalera -->
+    <div variablemenu="./snippets/capcalera.html"></div>
+
+    <!-- Menú -->
+    <div variablemenu="./snippets/menu.html"></div>
+
+    <!-- COntingut principal -->
+    <main>
+      <h1>Correccions</h1>
+    <hr>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>Àlex - Exercici grid-area</h2>
+        <h5>Solució, Abril 21, 2023</h5>
+        <div class="fakeimg" style="height:350px;">ERROR línia 48:ERROR: la línia no està comentada <br>      -------------------------------------------------------------------------------------------- <br>
+          SOLUCIÓ: 1) eliminar la línia o 2) comentar la línia 
+          <hr>
+          ERROR linia 53: no es mostra la distribució:
+          <pre>
+            grid-template-areas:
+            'cabecera cabecera cabecera cabecera cabecera'
+            'menu main main main aside aside'
+            'menu pie pie pie pie pie';
+          </pre>
+          SOLUCIÓ: afegir una <i style="color:red">cabecera</i> a la primera línia
+          <pre>
+            grid-template-areas:
+            'cabecera cabecera cabecera cabecera cabecera <span style="color: red;">cabecera</span> '
+            'menu main main main aside aside'
+            'menu pie pie pie pie pie';
+          </pre>
+
+      </div>
+        <p><a href="../alumnes/alex tabla2grid.html" target="_blank">alex tabla2grid.html</a></p>
+      </div>
+      <div class="card">
+        <h2>David - Exercici grid-area</h2>
+        <h5>Solució, Abril 21, 2023</h5>
+        <div class="fakeimg" style="height:450px;">
+          ERROR: No es visualitzen els estils. <br>
+          Línies 55, 61, 67, 73, 78, 84
+          <pre>
+            .item ga-capçalera{
+            .item ga-menu{
+            .item ga-main{
+            .item ga-aside{
+            .item ga-footer{
+            .item ga-contenidor{
+          </pre>
+          SOLUCIÓ: s'han declarat aquestes classes incloent el <span style="color: red;">item</span>. Cal eliminar la part d'<b>item</b>
+          <pre>
+            .ga-capçalera{
+            .ga-menu{
+            .ga-main{
+            .ga-aside{
+            .ga-footer{
+            .ga-contenidor{
+          </pre>
+          Afegir, a la classe <b>.ga-contenidor</b>, un <b>&lt;height&gt;</b> de 250px. <br>
+          Treure, a la classe <b>ga-menu</b>, l'atribut <b>        height: 50px;</b>
+        </div>
+        <p><a href="../alumnes/dsavidDisplaygrid.html" target="_blank">dsavidDisplaygrid.html</a></p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</main>
+   
+<!-- Peu de pàgina -->
+</footer>
+<div variablemenu="./snippets/peu.html"></div>
+
+<script>
+  includeHTML();
+</script>
+</body>
+</html>
