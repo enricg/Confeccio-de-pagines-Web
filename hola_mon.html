@@ -1,0 +1,90 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+
+    <link rel="stylesheet" href="./css/animaciones.css">
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
+		<link rel="stylesheet" href="./css/principal.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="stylesheet" href="./css/style-menu-vertical.css">
+		<title>Hola món</title>
+  </head>
+  <!-- funció per reutilitzar el codi-->
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain attribute:*/
+        file = elmnt.getAttribute("variablemenu");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("variablemenu");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    }
+  </script>
+  <body>
+    <!-- Capçalera -->
+    <div variablemenu="./snippets/capcalera.html"></div>
+
+    <!-- Menú -->
+    <div variablemenu="./snippets/menu.html"></div>
+
+    <!-- COntingut principal -->
+    <main>
+	
+</head>
+	Hola món
+<h1>Primer <b><i><u>exemple </b></i></u>de <del style="color:red; font-size:80px">pàgina </del>html</h1>
+<h2 style="color:red; font-size:40px">Aquest és un subtítol 2</h2>
+<h3>Aquest és un subtítol 3</h3>
+<h4 style="background-color:blue;">Aquest és un subtítol 4</h4>
+<h5>Aquest és un subtítol 5</h5>
+<h6>Aquest és un subtítol 6</h6>
+
+<p>Hola món. Que tal estàs?</p>
+<p>
+L'etiqueta &ltb&gt serveix per posar en negreta un text
+</p>
+L'etiqueta &ltem&gt per defecte posa el <em>text en cursiva</em>. L'etiqueta &lti&gt també posa el <i>text en cursiva</i>.
+Aquesta és una <b>frase en negreta</b>
+<p>Lorem ipsum dolor                                         sit amet, consectetur <strong>adipiscing elit</strong>. Sed luctus sagittis eleifend. <em>Interdum et malesuada </em>fames ac ante ipsum primis in faucibus. Nam aliquam felis eget metus facilisis, quis convallis mi pharetra. Donec eget tellus bibendum, aliquet leo sed, rhoncus est. Nulla ac dapibus nisi. Nam in scelerisque erat. Aliquam placerat ultrices mollis. Aliquam nisi ex, vulputate eu magna quis, feugiat <h1>aliquet </h1>turpis. 
+Pellentesque sit amet est sed sem tincidunt gravida.
+</p>
+</main>
+   
+    <!-- Peu de pàgina -->
+    </footer>
+    <div variablemenu="./snippets/peu.html"></div>
+
+    <script>
+      includeHTML();
+    </script>
+  </body>
+</html>
