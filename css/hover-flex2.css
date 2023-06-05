@@ -1,0 +1,137 @@
+.exemple {
+  display: block;
+  position: relative;
+  height: 300px;
+  width: 400px;
+}
+.grupcaixetes {
+  outline: solid;
+  width: 375px;
+  height: 150px;
+  display: flex;
+  margin: 5px;
+}
+.principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.caixa {
+  outline: solid;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  display: grid;
+  place-content: center;
+}
+.opcio {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: beige;
+  margin: 5px;
+  cursor: pointer;
+  width: 45%;
+  float: left;
+}
+
+.blau {
+  background-color: blue;
+}
+
+.vermell {
+  background-color: red;
+}
+
+.rosa {
+  background-color: pink;
+}
+
+.taronja {
+  background-color: orange;
+}
+
+.groc {
+  background-color: yellow;
+}
+
+.marro {
+  background-color: brown;
+}
+
+/* Propietats */
+.opcio:hover {
+  background-color: bisque;
+}
+
+.frow:hover ~ .grupcaixetes {
+  flex-direction: row;
+}
+.frow-reverse:hover ~ .grupcaixetes {
+  flex-direction: row-reverse;
+}
+.fcolumn:hover ~ .grupcaixetes {
+  flex-direction: column;
+}
+.fcolumn-reverse:hover ~ .grupcaixetes {
+  flex-direction: column-reverse;
+}
+
+/* Justify-content */
+.jflex-start:hover ~ .grupcaixetes {
+  justify-content: flex-start;
+}
+.jflex-end:hover ~ .grupcaixetes {
+  justify-content: flex-end;
+}
+.jcenter:hover ~ .grupcaixetes {
+  justify-content: center;
+}
+.jspace-between:hover ~ .grupcaixetes {
+  justify-content: space-between;
+}
+.jspace-around:hover ~ .grupcaixetes {
+  justify-content: space-around;
+}
+.jspace-between:hover ~ .grupcaixetes {
+  justify-content: space-between;
+}
+.jspace-evenly:hover ~ .grupcaixetes {
+  justify-content: space-evenly;
+}
+
+/* Align-items */
+.aiflex-start:hover ~ .grupcaixetes {
+  align-items: flex-start;
+}
+.aiflex-end:hover ~ .grupcaixetes {
+  align-items: flex-end;
+}
+.aicenter:hover ~ .grupcaixetes {
+  align-items: center;
+}
+.aistretch:hover ~ .grupcaixetes {
+  align-items: stretch;
+}
+.aibaseline:hover ~ .grupcaixetes {
+  align-items: baseline;
+}
+
+/* Align-content */
+.acflex-start:hover ~ .grupcaixetes {
+  align-content: flex-start;
+}
+.acflex-end:hover ~ .grupcaixetes {
+  align-content: flex-end;
+}
+.accenter:hover ~ .grupcaixetes {
+  align-content: center;
+}
+.acstretch:hover ~ .grupcaixetes {
+  align-content: stretch;
+}
+.acspace-around:hover ~ .grupcaixetes {
+  align-content: space-around;
+}
+.acspace-between:hover ~ .grupcaixetes {
+  align-content: space-between;
+}
