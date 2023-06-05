@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+
+    <link rel="stylesheet" href="./css/animaciones.css">
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/capcaleraipeu.css" />
+		<link rel="stylesheet" href="./css/principal.css" />
+    <link rel="stylesheet" href="./css/tooltip.css" />
+    <link rel="stylesheet" href="./css/style-menu-vertical.css">
+    <title>Combinacions de selectors</title>
+  <style>
+    body{
+      padding: 20px;
+    }
+    pre{
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      padding-top: 10px;
+      width: 30%;
+    }
+    span{
+      color: white;
+      background-color: rgb(150, 150, 150);
+    }
+    img{
+      max-width: 100%;
+    }
+    figure{
+      width: 50%;
+    }
+  </style>
+  </head>
+  <!-- funció per reutilitzar el codi-->
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain attribute:*/
+        file = elmnt.getAttribute("variablemenu");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("variablemenu");
+              includeHTML();
+            }
+          };
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+      <!-- Capçalera -->
+      <div variablemenu="./snippets/capcalera.html"></div>
+
+      <!-- Menú -->
+      <div variablemenu="./snippets/menu.html"></div>
+  
+      <!-- COntingut principal -->
+      <main>
+  <h1>Combinacions de selectors</h1>
+  <h2>Què són els combinadors?</h2>
+  <p>Són la combinació de selectors CSS senzills. Què vol dir això? Significa que el selector de classes, el selector d'identificació o fins i tot els selectors d'etiquetes, tot en CSS són selectors simples i quan fem servir més d'1 selector es fa un selector combinador.</p>
+  <p>
+    Per exemple: <br>
+    <span>div</span> i <span>p</span> són selectors simples, però junts div p són ara selectors combinadors. <br>
+    Bàsicament, el selector combinador defineix una relació entre els selectors.
+  </p> 
+  <ol>
+    <li><h3>Selector descendent</h3>
+      <p>Bàsicament selecciona tots els elements dins o descendents de l'element especificat. Per exemple</p>
+      <pre>
+        div p {
+          color : red;
+       }       
+      </pre>
+      <p>Colorejarà/estilitzarà tots els elements <span>&lt;p&gt;</span> dins dels elements <span>&lt;div&gt;</span> inclosos tots els elements <span>&lt;p&gt;</span> imbricats. Els elements imbricats són aquells que estan imbricats en un contenidor com...
+      <pre>
+        &lt;div&gt;
+          &lt;p&gt;Paràgraf&lt;/p&gt;
+          &lt;h1&gt;&lt;p&gt;Paràgraf inbricat&lt;/p&gt;&lt;h1&gt;
+        &lt;/div&gt;
+      </pre>
+    </li>
+    <li><h3>Selector de fills ( &gt; )</h3>
+      Selecciona tots els elements dins de l'element especificat, excepte els elements imbricats. Per exemple,
+      <pre>
+        div &gt; p {
+          color: red;
+        }
+     </pre>
+     <p>Per tant, l'exemple anterior seleccionarà tots els elements <span>&lt;p&gt;</span> de l'element <span>&lt;div&gt;</span> però no afectarà els elements <span>&lt;p&gt;</span> imbricats.</p>
+    </li>
+    <li><h3>Selector de germans adjacents ( + )</h3>
+      <p>El selector de germans adjacents selecciona els elements just després de l'element especificat. Per exemple,</p>
+      <pre>
+        div + p {
+          color: red;
+        }       
+      </pre>
+      <p>Per tant, el codi anterior només seleccionarà l'element &lt;p&gt; que està just després de l'element &lt;div&gt;. <br> Exemple -
+      </p>
+      <figure>
+        <img src="../images/adjacentsiblingselector.jpg" alt="Exemple de selector de germans adjacents" width="50%">
+      </figure>
+    </li>
+    <li><h3>Selector general de germans ( ~ )</h3>
+    <p>Aquest és l'últim i selecciona tots els elements després de l'element especificat. <br> Per exemple,</p>
+    <pre>
+      div ~ p {
+        color: red;
+      }      
+    </pre>
+    <p>
+      L'exemple anterior seleccionarà tots els elements &lt;p&gt; després de l'element &lt;div&gt;. <br>
+      Exemple:
+    </p>
+    <figure>
+      <img src="../images/generallsiblingselector.jpg" alt="Exemple de selector de germans adjacents" width="50%">
+    </figure>
+  </li>
+  </ol>
+</main>
+   
+<!-- Peu de pàgina -->
+</footer>
+<div variablemenu="./snippets/peu.html"></div>
+
+<script>
+  includeHTML();
+</script>
+</body>
+</html>
